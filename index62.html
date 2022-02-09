@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пример 62</title>
+</head>
+<body>
+  <script type = "text/javascript">
+    //Функция для ввода чисел
+    function Input(a) {
+      let numb = prompt(`Please, enter the ${a} number.
+Attention: the length of the number is no more than 150 characters!`);
+      return numb;
+    }
+    //Функция для проверки корректности введенных данных
+    function ValidData(current) {
+      if(isNaN(current) || current.length > 150 || current.trim().length == 0){
+      alert(`Your number is incorrect! Try again!`);
+      return 0;
+      }
+      else return 1;
+    }
+    
+    //Стрелочная функция для вычисления произведения
+    const mult = (x, y) => x * y;
+    
+    //Ввод х и у
+    let x;
+    do {
+      x = Input('first');
+    } while (!ValidData(x));
+
+
+    let y;
+    do {
+        y = Input('second');
+    } while (!ValidData(y));
+
+    //Вывод результата в окно браузера
+    const string = `The multiplying of ${+x} and ${+y} is ${mult(+x, +y)}.`;
+    alert(string);
+
+  </script>
+</body>
+</html>
