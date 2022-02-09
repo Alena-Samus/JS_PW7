@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пример 63</title>
+</head>
+<body>
+  <script>
+    //Функция для генерации динамического URL
+    function createOAuthString(host, clientID, scope) {
+      return `${host}/login/oauth/authorize?client_id=${clientID}&scope=${scope}`
+    }
+
+    //Функция для ввода clientID. 
+    //Если пользователь ничего не ввел, clientID = Alena-Samus
+    function  inputID() {
+      const ID = prompt('Введите свой clientID', 'Alena-Samus');
+      if (ID == '' || ID.trim() == '')
+        return `Alena-Samus`;
+      return ID;
+    }
+
+    //Вывод результата в консоль
+    console.log(`Динамический URL:
+    ${createOAuthString('https://github.com', inputID(), 'repo,user')}`);
+  </script>
+</body>
+</html>
