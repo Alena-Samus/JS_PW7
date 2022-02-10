@@ -17,17 +17,32 @@
       this.display = newDisplay;
       this.protect = newProtect;
       
+      //Функция для вывода введенных характеристик
       this.show = function () {
+        document.write(`<br>`);
         for (let i in this) {
           if (typeof this[i] != 'function')
             document.write(`${i}: ${this[i]}<br>`);
         }
       }
     }; 
-
-    let Smart1 = new Smart ('iPhone 13 Pro Max', '2021', '1890$','','6.7', 'IP68');
-    Smart1.show();
     
+    document.write(`Характеристики введенный объектов:<br>`);
+
+    //Ввод первого объекта
+    let Smart1 = new Smart ('Samsung Galaxy S22 Ultra', '2022', '1210$','1TB','6.8', 'IP68');
+    //Вывод характеристик первого объекта
+    Smart1.show();
+
+    //Ввод второго объекта
+    let Smart2 = new Smart('ASUS ROG Phone 5s ZS676KS', '2021', '1267$', '256GB', '6.78', 'IP68');
+    //Вывод характеристик второго объекта
+    Smart2.show();
+    
+    //Ввод третьего объекта
+    let Smart3 = new Smart('OnePlus 10 Pro', '2022', '1167$', '256Gb', '6.7', 'IP68');
+    //Вывод характеристик третьего объекта
+    Smart3.show();       
 
   </script>
 </body>
