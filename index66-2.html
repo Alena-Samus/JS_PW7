@@ -8,15 +8,15 @@
 </head>
 <body>
   <script>
-    function  vvf(newObj) {
-      document.writeln(`Доступ к свойствам с использованием квадратных скобок.<br>В свойстве data1 хранится значение ${newObj}`);
-    }
-
     let obj = {
-      'data1': 'Виталий Валентинович'
+      data1: 'Виталий Валентинович',
+
+      get vvf(){
+        return this.data1;
+      },
     };
     
-    vvf(obj['data1']);
+    document.writeln(`Использование свойства-аксессора get для получения данных.<br>В свойстве data1 хранится значение ${obj.vvf}`);
           
           
   </script>
