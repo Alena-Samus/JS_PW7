@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пример 65</title>
+</head>
+<body>
+  <script type = "text/javascript">
+    //Конструктор для создания новых объектов Smart
+    function Smart(newModel, newYear, newPrice, newMemory, newDisplay, newProtect) {//, 
+      this.model = newModel;
+      this.year = newYear;
+      this.price = newPrice;
+      this.memory = newMemory;
+      this.display = newDisplay;
+      this.protect = newProtect;
+      
+      this.show = function () {
+        for (let i in this) {
+          if (typeof this[i] != 'function')
+            document.write(`${i}: ${this[i]}<br>`);
+        }
+      }
+    }; 
+
+    let Smart1 = new Smart ('iPhone 13 Pro Max', '2021', '1890$','','6.7', 'IP68');
+    Smart1.show();
+    
+
+  </script>
+</body>
+</html>
